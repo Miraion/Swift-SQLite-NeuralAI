@@ -6,7 +6,22 @@
 //  Copyright © 2017 Jeremy S. All rights reserved.
 //
 
-import Foundation
+let db = SQLiteDatabase(path: "/Users/Jeremy/Desktop/DatabaseTest/TestDB.db")
 
-print("Hello, World!")
+let table = db.table(name: "people")
 
+let tableRowSet = table.select(column: "*")
+
+if let rowSet = tableRowSet {
+    while rowSet.nextRow() {
+        print("\(rowSet.asInt(column: 0)) | \(rowSet.asText(column: 1)) | \(rowSet.asInt(column: 2))")
+    }
+}
+
+tableRowSet?.finalize()
+
+if db.close() {
+    print("Close OK!")
+} else {
+    print("Error closing database")
+}

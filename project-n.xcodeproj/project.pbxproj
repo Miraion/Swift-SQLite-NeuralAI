@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3F60F0FD1F96C2F900FCCD8D /* SQLiteDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F60F0FC1F96C2F900FCCD8D /* SQLiteDatabase.swift */; };
+		3F60F0FF1F96C3A900FCCD8D /* SQLiteTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F60F0FE1F96C3A900FCCD8D /* SQLiteTable.swift */; };
+		3F60F1011F96C48800FCCD8D /* SQLiteStatement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F60F1001F96C48800FCCD8D /* SQLiteStatement.swift */; };
+		3F66D5A01F9700660034C810 /* SQLiteRowSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F66D59F1F9700660034C810 /* SQLiteRowSet.swift */; };
 		3F7F9DA41F9429940064994A /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F7F9DA31F9429940064994A /* main.swift */; };
 /* End PBXBuildFile section */
 
@@ -23,6 +27,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		3F60F0FC1F96C2F900FCCD8D /* SQLiteDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SQLiteDatabase.swift; sourceTree = "<group>"; };
+		3F60F0FE1F96C3A900FCCD8D /* SQLiteTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SQLiteTable.swift; sourceTree = "<group>"; };
+		3F60F1001F96C48800FCCD8D /* SQLiteStatement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SQLiteStatement.swift; sourceTree = "<group>"; };
+		3F66D59F1F9700660034C810 /* SQLiteRowSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SQLiteRowSet.swift; sourceTree = "<group>"; };
 		3F7F9DA01F9429940064994A /* project-n */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "project-n"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F7F9DA31F9429940064994A /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -38,6 +46,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3F60F0FB1F96C2D300FCCD8D /* SQLite Interface */ = {
+			isa = PBXGroup;
+			children = (
+				3F60F0FC1F96C2F900FCCD8D /* SQLiteDatabase.swift */,
+				3F60F0FE1F96C3A900FCCD8D /* SQLiteTable.swift */,
+				3F60F1001F96C48800FCCD8D /* SQLiteStatement.swift */,
+				3F66D59F1F9700660034C810 /* SQLiteRowSet.swift */,
+			);
+			path = "SQLite Interface";
+			sourceTree = "<group>";
+		};
 		3F7F9D971F9429940064994A = {
 			isa = PBXGroup;
 			children = (
@@ -57,6 +76,7 @@
 		3F7F9DA21F9429940064994A /* project-n */ = {
 			isa = PBXGroup;
 			children = (
+				3F60F0FB1F96C2D300FCCD8D /* SQLite Interface */,
 				3F7F9DA31F9429940064994A /* main.swift */,
 			);
 			path = "project-n";
@@ -120,7 +140,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3F60F0FF1F96C3A900FCCD8D /* SQLiteTable.swift in Sources */,
+				3F60F0FD1F96C2F900FCCD8D /* SQLiteDatabase.swift in Sources */,
 				3F7F9DA41F9429940064994A /* main.swift in Sources */,
+				3F60F1011F96C48800FCCD8D /* SQLiteStatement.swift in Sources */,
+				3F66D5A01F9700660034C810 /* SQLiteRowSet.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
