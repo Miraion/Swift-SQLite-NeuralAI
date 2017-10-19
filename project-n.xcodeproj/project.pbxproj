@@ -10,8 +10,21 @@
 		3F60F0FD1F96C2F900FCCD8D /* SQLiteDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F60F0FC1F96C2F900FCCD8D /* SQLiteDatabase.swift */; };
 		3F60F0FF1F96C3A900FCCD8D /* SQLiteTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F60F0FE1F96C3A900FCCD8D /* SQLiteTable.swift */; };
 		3F60F1011F96C48800FCCD8D /* SQLiteStatement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F60F1001F96C48800FCCD8D /* SQLiteStatement.swift */; };
+		3F64ED5C1F97F72D0070DD04 /* Shell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F64ED5B1F97F72D0070DD04 /* Shell.swift */; };
 		3F66D5A01F9700660034C810 /* SQLiteRowSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F66D59F1F9700660034C810 /* SQLiteRowSet.swift */; };
 		3F7F9DA41F9429940064994A /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F7F9DA31F9429940064994A /* main.swift */; };
+		3F9167C01F97B63D00896572 /* Neuron.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F9167BF1F97B63D00896572 /* Neuron.swift */; };
+		3F9167C21F97B6CB00896572 /* Connection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F9167C11F97B6CB00896572 /* Connection.swift */; };
+		3F9167C41F97B9AC00896572 /* InnovationGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F9167C31F97B9AC00896572 /* InnovationGenerator.swift */; };
+		3F9167C61F97BBAF00896572 /* NeuralConnectionDataSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F9167C51F97BBAF00896572 /* NeuralConnectionDataSet.swift */; };
+		3F9167CA1F97E25500896572 /* InputNeuron.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F9167C91F97E25500896572 /* InputNeuron.swift */; };
+		3F9167CC1F97E25E00896572 /* OutputNeuron.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F9167CB1F97E25E00896572 /* OutputNeuron.swift */; };
+		3F9167CE1F97E26500896572 /* HiddenNeuron.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F9167CD1F97E26500896572 /* HiddenNeuron.swift */; };
+		3F9167D01F97E73C00896572 /* TernayThresholdNeuron.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F9167CF1F97E73C00896572 /* TernayThresholdNeuron.swift */; };
+		3F9167D21F97E8B400896572 /* BinaryThresholdNeuron.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F9167D11F97E8B400896572 /* BinaryThresholdNeuron.swift */; };
+		3F9167D41F97EAA800896572 /* SigmoidNeuron.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F9167D31F97EAA800896572 /* SigmoidNeuron.swift */; };
+		3F9167D61F97EB7800896572 /* NeuralNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F9167D51F97EB7800896572 /* NeuralNetwork.swift */; };
+		3F9167D81F97EEA200896572 /* NeuralError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F9167D71F97EEA200896572 /* NeuralError.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -30,9 +43,22 @@
 		3F60F0FC1F96C2F900FCCD8D /* SQLiteDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SQLiteDatabase.swift; sourceTree = "<group>"; };
 		3F60F0FE1F96C3A900FCCD8D /* SQLiteTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SQLiteTable.swift; sourceTree = "<group>"; };
 		3F60F1001F96C48800FCCD8D /* SQLiteStatement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SQLiteStatement.swift; sourceTree = "<group>"; };
+		3F64ED5B1F97F72D0070DD04 /* Shell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Shell.swift; sourceTree = "<group>"; };
 		3F66D59F1F9700660034C810 /* SQLiteRowSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SQLiteRowSet.swift; sourceTree = "<group>"; };
 		3F7F9DA01F9429940064994A /* project-n */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "project-n"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F7F9DA31F9429940064994A /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		3F9167BF1F97B63D00896572 /* Neuron.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Neuron.swift; sourceTree = "<group>"; };
+		3F9167C11F97B6CB00896572 /* Connection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Connection.swift; sourceTree = "<group>"; };
+		3F9167C31F97B9AC00896572 /* InnovationGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InnovationGenerator.swift; sourceTree = "<group>"; };
+		3F9167C51F97BBAF00896572 /* NeuralConnectionDataSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeuralConnectionDataSet.swift; sourceTree = "<group>"; };
+		3F9167C91F97E25500896572 /* InputNeuron.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputNeuron.swift; sourceTree = "<group>"; };
+		3F9167CB1F97E25E00896572 /* OutputNeuron.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutputNeuron.swift; sourceTree = "<group>"; };
+		3F9167CD1F97E26500896572 /* HiddenNeuron.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HiddenNeuron.swift; sourceTree = "<group>"; };
+		3F9167CF1F97E73C00896572 /* TernayThresholdNeuron.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TernayThresholdNeuron.swift; sourceTree = "<group>"; };
+		3F9167D11F97E8B400896572 /* BinaryThresholdNeuron.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BinaryThresholdNeuron.swift; sourceTree = "<group>"; };
+		3F9167D31F97EAA800896572 /* SigmoidNeuron.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigmoidNeuron.swift; sourceTree = "<group>"; };
+		3F9167D51F97EB7800896572 /* NeuralNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeuralNetwork.swift; sourceTree = "<group>"; };
+		3F9167D71F97EEA200896572 /* NeuralError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeuralError.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +86,7 @@
 		3F7F9D971F9429940064994A = {
 			isa = PBXGroup;
 			children = (
+				3F9167C71F97C17F00896572 /* databases */,
 				3F7F9DA21F9429940064994A /* project-n */,
 				3F7F9DA11F9429940064994A /* Products */,
 			);
@@ -76,10 +103,46 @@
 		3F7F9DA21F9429940064994A /* project-n */ = {
 			isa = PBXGroup;
 			children = (
-				3F60F0FB1F96C2D300FCCD8D /* SQLite Interface */,
 				3F7F9DA31F9429940064994A /* main.swift */,
+				3F64ED5B1F97F72D0070DD04 /* Shell.swift */,
+				3F9167BE1F97B61D00896572 /* Neural Network */,
+				3F60F0FB1F96C2D300FCCD8D /* SQLite Interface */,
 			);
 			path = "project-n";
+			sourceTree = "<group>";
+		};
+		3F9167BE1F97B61D00896572 /* Neural Network */ = {
+			isa = PBXGroup;
+			children = (
+				3F9167C11F97B6CB00896572 /* Connection.swift */,
+				3F9167BF1F97B63D00896572 /* Neuron.swift */,
+				3F9167C91F97E25500896572 /* InputNeuron.swift */,
+				3F9167CB1F97E25E00896572 /* OutputNeuron.swift */,
+				3F9167CD1F97E26500896572 /* HiddenNeuron.swift */,
+				3F9167C81F97E24600896572 /* Neuron Types */,
+				3F9167D51F97EB7800896572 /* NeuralNetwork.swift */,
+				3F9167C31F97B9AC00896572 /* InnovationGenerator.swift */,
+				3F9167C51F97BBAF00896572 /* NeuralConnectionDataSet.swift */,
+				3F9167D71F97EEA200896572 /* NeuralError.swift */,
+			);
+			path = "Neural Network";
+			sourceTree = "<group>";
+		};
+		3F9167C71F97C17F00896572 /* databases */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = databases;
+			sourceTree = "<group>";
+		};
+		3F9167C81F97E24600896572 /* Neuron Types */ = {
+			isa = PBXGroup;
+			children = (
+				3F9167CF1F97E73C00896572 /* TernayThresholdNeuron.swift */,
+				3F9167D11F97E8B400896572 /* BinaryThresholdNeuron.swift */,
+				3F9167D31F97EAA800896572 /* SigmoidNeuron.swift */,
+			);
+			path = "Neuron Types";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -140,11 +203,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3F64ED5C1F97F72D0070DD04 /* Shell.swift in Sources */,
+				3F9167CE1F97E26500896572 /* HiddenNeuron.swift in Sources */,
+				3F9167C41F97B9AC00896572 /* InnovationGenerator.swift in Sources */,
+				3F9167CA1F97E25500896572 /* InputNeuron.swift in Sources */,
 				3F60F0FF1F96C3A900FCCD8D /* SQLiteTable.swift in Sources */,
+				3F9167CC1F97E25E00896572 /* OutputNeuron.swift in Sources */,
+				3F9167D41F97EAA800896572 /* SigmoidNeuron.swift in Sources */,
 				3F60F0FD1F96C2F900FCCD8D /* SQLiteDatabase.swift in Sources */,
+				3F9167D01F97E73C00896572 /* TernayThresholdNeuron.swift in Sources */,
 				3F7F9DA41F9429940064994A /* main.swift in Sources */,
 				3F60F1011F96C48800FCCD8D /* SQLiteStatement.swift in Sources */,
+				3F9167D81F97EEA200896572 /* NeuralError.swift in Sources */,
+				3F9167C01F97B63D00896572 /* Neuron.swift in Sources */,
+				3F9167C61F97BBAF00896572 /* NeuralConnectionDataSet.swift in Sources */,
 				3F66D5A01F9700660034C810 /* SQLiteRowSet.swift in Sources */,
+				3F9167C21F97B6CB00896572 /* Connection.swift in Sources */,
+				3F9167D21F97E8B400896572 /* BinaryThresholdNeuron.swift in Sources */,
+				3F9167D61F97EB7800896572 /* NeuralNetwork.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

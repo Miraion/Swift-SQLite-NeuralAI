@@ -12,14 +12,25 @@ class SQLiteDatabase {
     
     var ptr: OpaquePointer? = nil
     
+    let path: String
+    
+    // A dictionary of previously queried tables so that a new
+    // object does not need to be created with every call for
+    // a table.
     private var tables = [String : SQLiteTable]()
     
     init (path: String) {
+        self.path = path
         sqlite3_open(path, &ptr)
     }
     
+    // Try to close connection on deinit.
     deinit {
         sqlite3_close(ptr)
+    }
+    
+    func dump (to file: String) {
+        shell("sqlite3", path, " .dump", " > ", file)
     }
  
     // Creates and prepares a statement.
@@ -45,6 +56,30 @@ class SQLiteDatabase {
         }
     }
     
+    // Calls the SQLite command to create a table with a given name
+    // and column representation.
+    @discardableResult
+    func createTable (name: String, _ command: String) -> Bool {
+        if let statement = generateStatment("CREATE TABLE \(name)\(command);") {
+            return statement.step() == SQLITE_DONE
+        } else {
+            return false
+        }
+    }
+    
+    // Drops a table with a given name.
+    @discardableResult
+    func dropTable (name: String) -> Bool {
+        if let statement = generateStatment("DROP TABLE \(name);") {
+            return statement.step() == SQLITE_DONE
+        } else {
+            return false
+        }
+    }
+    
+    // Call the command to close the database.
+    // Returns whether close was successful.
+    @discardableResult
     func close () -> Bool {
         return sqlite3_close(ptr) == SQLITE_OK
     }

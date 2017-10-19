@@ -23,12 +23,12 @@ extension SQLiteDatabase {
             self.name = name
         }
         
-        func select (column: String, where whereText: String? = nil) -> SQLiteRowSet? {
+        func select (column: String, _ specText: String? = nil) -> SQLiteRowSet? {
             let statement: SQLiteStatement?
             
             // Create the statement from input strings.
-            if let wText = whereText {
-                statement = database.generateStatment("SELECT \(column) FROM \(name) WHERE \(wText);")
+            if let sText = specText {
+                statement = database.generateStatment("SELECT \(column) FROM \(name) \(sText);")
             } else {
                 statement = database.generateStatment("SELECT \(column) FROM \(name);")
             }
@@ -43,7 +43,7 @@ extension SQLiteDatabase {
         // Inserts a given set of values into the table.
         // Returns whether the insertion was successful.
         @discardableResult
-        func insert (values: String) -> Bool {
+        func insert (_ values: String) -> Bool {
             if let statement = database.generateStatment("INSERT INTO \(name) VALUES \(values);") {
                 return statement.step() == SQLITE_DONE
             } else {

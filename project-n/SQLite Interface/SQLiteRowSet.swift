@@ -11,6 +11,10 @@ import SQLite3
 extension SQLiteDatabase.SQLiteTable {
     
     // An object to represent a set of rows returned by a SQLite query.
+    //
+    // nextRow() is not called on object creation but it is called once
+    // a request for a column element is recieved. It may also be called
+    // manually to retrieve the first row.
     class SQLiteRowSet {
         
         private var statement: SQLiteStatement
