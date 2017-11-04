@@ -7,12 +7,27 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3F06E8CC1F9E56D6007A1D17 /* SQLiteRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F06E8CB1F9E56D6007A1D17 /* SQLiteRow.swift */; };
+		3F06E8CE1F9E5923007A1D17 /* SQLiteRowSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F06E8CD1F9E5923007A1D17 /* SQLiteRowSet.swift */; };
+		3F1368991FAE5AC700637559 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F1368981FAE5AC700637559 /* Helper.swift */; };
+		3F13689B1FAE62E600637559 /* LearningCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F13689A1FAE62E600637559 /* LearningCore.swift */; };
+		3F31ED201FA2A09D00BA9622 /* RandomNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F31ED1F1FA2A09D00BA9622 /* RandomNetwork.swift */; };
+		3F31ED221FA2A53700BA9622 /* Random.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F31ED211FA2A53700BA9622 /* Random.swift */; };
+		3F56008E1F9AC8DA007E708A /* OutputSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F56008D1F9AC8DA007E708A /* OutputSet.swift */; };
+		3F5600901F9ACD2E007E708A /* GeneralError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F56008F1F9ACD2E007E708A /* GeneralError.swift */; };
 		3F60F0FD1F96C2F900FCCD8D /* SQLiteDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F60F0FC1F96C2F900FCCD8D /* SQLiteDatabase.swift */; };
 		3F60F0FF1F96C3A900FCCD8D /* SQLiteTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F60F0FE1F96C3A900FCCD8D /* SQLiteTable.swift */; };
 		3F60F1011F96C48800FCCD8D /* SQLiteStatement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F60F1001F96C48800FCCD8D /* SQLiteStatement.swift */; };
 		3F64ED5C1F97F72D0070DD04 /* Shell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F64ED5B1F97F72D0070DD04 /* Shell.swift */; };
-		3F66D5A01F9700660034C810 /* SQLiteRowSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F66D59F1F9700660034C810 /* SQLiteRowSet.swift */; };
+		3F66D5A01F9700660034C810 /* SQLiteRowSet_DEP.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F66D59F1F9700660034C810 /* SQLiteRowSet_DEP.swift */; };
 		3F7F9DA41F9429940064994A /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F7F9DA31F9429940064994A /* main.swift */; };
+		3F8BDC181FA9560000449C08 /* NeuralIOSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F8BDC171FA9560000449C08 /* NeuralIOSet.swift */; };
+		3F8BDC1A1FA9825A00449C08 /* TLSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F8BDC191FA9825A00449C08 /* TLSet.swift */; };
+		3F8BDC1C1FAA48F400449C08 /* TLEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F8BDC1B1FAA48F400449C08 /* TLEntity.swift */; };
+		3F8BDC1E1FAAE38000449C08 /* LearningThread.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F8BDC1D1FAAE38000449C08 /* LearningThread.swift */; };
+		3F8BDC231FACC78A00449C08 /* ProgressDataSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F8BDC221FACC78A00449C08 /* ProgressDataSet.swift */; };
+		3F8BDC251FACC87000449C08 /* Display.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F8BDC241FACC87000449C08 /* Display.swift */; };
+		3F8BDC271FACEB2A00449C08 /* Flag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F8BDC261FACEB2A00449C08 /* Flag.swift */; };
 		3F9167C01F97B63D00896572 /* Neuron.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F9167BF1F97B63D00896572 /* Neuron.swift */; };
 		3F9167C21F97B6CB00896572 /* Connection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F9167C11F97B6CB00896572 /* Connection.swift */; };
 		3F9167C41F97B9AC00896572 /* InnovationGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F9167C31F97B9AC00896572 /* InnovationGenerator.swift */; };
@@ -25,6 +40,13 @@
 		3F9167D41F97EAA800896572 /* SigmoidNeuron.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F9167D31F97EAA800896572 /* SigmoidNeuron.swift */; };
 		3F9167D61F97EB7800896572 /* NeuralNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F9167D51F97EB7800896572 /* NeuralNetwork.swift */; };
 		3F9167D81F97EEA200896572 /* NeuralError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F9167D71F97EEA200896572 /* NeuralError.swift */; };
+		3FCBA7921FAD834500851A0D /* CLGameTemplate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FCBA7911FAD834500851A0D /* CLGameTemplate.swift */; };
+		3FCBA7941FAD83B400851A0D /* CLEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FCBA7931FAD83B400851A0D /* CLEntity.swift */; };
+		3FCBA7961FAD858600851A0D /* CLFoundation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FCBA7951FAD858600851A0D /* CLFoundation.swift */; };
+		3FCBA79A1FAD87AB00851A0D /* CLSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FCBA7991FAD87AB00851A0D /* CLSet.swift */; };
+		3FCBA79C1FAD8B5400851A0D /* LearningSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FCBA79B1FAD8B5400851A0D /* LearningSet.swift */; };
+		3FCBA79E1FAD8BFA00851A0D /* LearningEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FCBA79D1FAD8BFA00851A0D /* LearningEntity.swift */; };
+		3FCBA7A01FAD8CCE00851A0D /* GrandMasterConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FCBA79F1FAD8CCE00851A0D /* GrandMasterConfig.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -40,13 +62,28 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		3F06E8CB1F9E56D6007A1D17 /* SQLiteRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SQLiteRow.swift; sourceTree = "<group>"; };
+		3F06E8CD1F9E5923007A1D17 /* SQLiteRowSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SQLiteRowSet.swift; sourceTree = "<group>"; };
+		3F1368981FAE5AC700637559 /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
+		3F13689A1FAE62E600637559 /* LearningCore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearningCore.swift; sourceTree = "<group>"; };
+		3F31ED1F1FA2A09D00BA9622 /* RandomNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomNetwork.swift; sourceTree = "<group>"; };
+		3F31ED211FA2A53700BA9622 /* Random.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Random.swift; sourceTree = "<group>"; };
+		3F56008D1F9AC8DA007E708A /* OutputSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutputSet.swift; sourceTree = "<group>"; };
+		3F56008F1F9ACD2E007E708A /* GeneralError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralError.swift; sourceTree = "<group>"; };
 		3F60F0FC1F96C2F900FCCD8D /* SQLiteDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SQLiteDatabase.swift; sourceTree = "<group>"; };
 		3F60F0FE1F96C3A900FCCD8D /* SQLiteTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SQLiteTable.swift; sourceTree = "<group>"; };
 		3F60F1001F96C48800FCCD8D /* SQLiteStatement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SQLiteStatement.swift; sourceTree = "<group>"; };
 		3F64ED5B1F97F72D0070DD04 /* Shell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Shell.swift; sourceTree = "<group>"; };
-		3F66D59F1F9700660034C810 /* SQLiteRowSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SQLiteRowSet.swift; sourceTree = "<group>"; };
+		3F66D59F1F9700660034C810 /* SQLiteRowSet_DEP.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SQLiteRowSet_DEP.swift; sourceTree = "<group>"; };
 		3F7F9DA01F9429940064994A /* project-n */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "project-n"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F7F9DA31F9429940064994A /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		3F8BDC171FA9560000449C08 /* NeuralIOSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeuralIOSet.swift; sourceTree = "<group>"; };
+		3F8BDC191FA9825A00449C08 /* TLSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TLSet.swift; sourceTree = "<group>"; };
+		3F8BDC1B1FAA48F400449C08 /* TLEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TLEntity.swift; sourceTree = "<group>"; };
+		3F8BDC1D1FAAE38000449C08 /* LearningThread.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearningThread.swift; sourceTree = "<group>"; };
+		3F8BDC221FACC78A00449C08 /* ProgressDataSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressDataSet.swift; sourceTree = "<group>"; };
+		3F8BDC241FACC87000449C08 /* Display.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Display.swift; sourceTree = "<group>"; };
+		3F8BDC261FACEB2A00449C08 /* Flag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Flag.swift; sourceTree = "<group>"; };
 		3F9167BF1F97B63D00896572 /* Neuron.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Neuron.swift; sourceTree = "<group>"; };
 		3F9167C11F97B6CB00896572 /* Connection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Connection.swift; sourceTree = "<group>"; };
 		3F9167C31F97B9AC00896572 /* InnovationGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InnovationGenerator.swift; sourceTree = "<group>"; };
@@ -59,6 +96,13 @@
 		3F9167D31F97EAA800896572 /* SigmoidNeuron.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigmoidNeuron.swift; sourceTree = "<group>"; };
 		3F9167D51F97EB7800896572 /* NeuralNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeuralNetwork.swift; sourceTree = "<group>"; };
 		3F9167D71F97EEA200896572 /* NeuralError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeuralError.swift; sourceTree = "<group>"; };
+		3FCBA7911FAD834500851A0D /* CLGameTemplate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CLGameTemplate.swift; sourceTree = "<group>"; };
+		3FCBA7931FAD83B400851A0D /* CLEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CLEntity.swift; sourceTree = "<group>"; };
+		3FCBA7951FAD858600851A0D /* CLFoundation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CLFoundation.swift; sourceTree = "<group>"; };
+		3FCBA7991FAD87AB00851A0D /* CLSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CLSet.swift; sourceTree = "<group>"; };
+		3FCBA79B1FAD8B5400851A0D /* LearningSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearningSet.swift; sourceTree = "<group>"; };
+		3FCBA79D1FAD8BFA00851A0D /* LearningEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearningEntity.swift; sourceTree = "<group>"; };
+		3FCBA79F1FAD8CCE00851A0D /* GrandMasterConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrandMasterConfig.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,13 +116,32 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3F56008A1F9AC810007E708A /* Machine Learning */ = {
+			isa = PBXGroup;
+			children = (
+				3FCBA79F1FAD8CCE00851A0D /* GrandMasterConfig.swift */,
+				3F56008D1F9AC8DA007E708A /* OutputSet.swift */,
+				3F8BDC171FA9560000449C08 /* NeuralIOSet.swift */,
+				3FCBA79D1FAD8BFA00851A0D /* LearningEntity.swift */,
+				3FCBA79B1FAD8B5400851A0D /* LearningSet.swift */,
+				3F8BDC1D1FAAE38000449C08 /* LearningThread.swift */,
+				3F8BDC211FACC71F00449C08 /* Display */,
+				3FCBA78F1FAD80C200851A0D /* Targeted Learning */,
+				3FCBA7901FAD80E400851A0D /* Competitive Learning */,
+				3F13689A1FAE62E600637559 /* LearningCore.swift */,
+			);
+			path = "Machine Learning";
+			sourceTree = "<group>";
+		};
 		3F60F0FB1F96C2D300FCCD8D /* SQLite Interface */ = {
 			isa = PBXGroup;
 			children = (
 				3F60F0FC1F96C2F900FCCD8D /* SQLiteDatabase.swift */,
 				3F60F0FE1F96C3A900FCCD8D /* SQLiteTable.swift */,
 				3F60F1001F96C48800FCCD8D /* SQLiteStatement.swift */,
-				3F66D59F1F9700660034C810 /* SQLiteRowSet.swift */,
+				3F66D59F1F9700660034C810 /* SQLiteRowSet_DEP.swift */,
+				3F06E8CD1F9E5923007A1D17 /* SQLiteRowSet.swift */,
+				3F06E8CB1F9E56D6007A1D17 /* SQLiteRow.swift */,
 			);
 			path = "SQLite Interface";
 			sourceTree = "<group>";
@@ -105,22 +168,37 @@
 			children = (
 				3F7F9DA31F9429940064994A /* main.swift */,
 				3F64ED5B1F97F72D0070DD04 /* Shell.swift */,
+				3F56008F1F9ACD2E007E708A /* GeneralError.swift */,
+				3F31ED211FA2A53700BA9622 /* Random.swift */,
+				3F8BDC261FACEB2A00449C08 /* Flag.swift */,
+				3F1368981FAE5AC700637559 /* Helper.swift */,
 				3F9167BE1F97B61D00896572 /* Neural Network */,
+				3F56008A1F9AC810007E708A /* Machine Learning */,
 				3F60F0FB1F96C2D300FCCD8D /* SQLite Interface */,
 			);
 			path = "project-n";
 			sourceTree = "<group>";
 		};
+		3F8BDC211FACC71F00449C08 /* Display */ = {
+			isa = PBXGroup;
+			children = (
+				3F8BDC221FACC78A00449C08 /* ProgressDataSet.swift */,
+				3F8BDC241FACC87000449C08 /* Display.swift */,
+			);
+			path = Display;
+			sourceTree = "<group>";
+		};
 		3F9167BE1F97B61D00896572 /* Neural Network */ = {
 			isa = PBXGroup;
 			children = (
+				3F31ED1F1FA2A09D00BA9622 /* RandomNetwork.swift */,
+				3F9167D51F97EB7800896572 /* NeuralNetwork.swift */,
 				3F9167C11F97B6CB00896572 /* Connection.swift */,
 				3F9167BF1F97B63D00896572 /* Neuron.swift */,
 				3F9167C91F97E25500896572 /* InputNeuron.swift */,
 				3F9167CB1F97E25E00896572 /* OutputNeuron.swift */,
 				3F9167CD1F97E26500896572 /* HiddenNeuron.swift */,
 				3F9167C81F97E24600896572 /* Neuron Types */,
-				3F9167D51F97EB7800896572 /* NeuralNetwork.swift */,
 				3F9167C31F97B9AC00896572 /* InnovationGenerator.swift */,
 				3F9167C51F97BBAF00896572 /* NeuralConnectionDataSet.swift */,
 				3F9167D71F97EEA200896572 /* NeuralError.swift */,
@@ -143,6 +221,26 @@
 				3F9167D31F97EAA800896572 /* SigmoidNeuron.swift */,
 			);
 			path = "Neuron Types";
+			sourceTree = "<group>";
+		};
+		3FCBA78F1FAD80C200851A0D /* Targeted Learning */ = {
+			isa = PBXGroup;
+			children = (
+				3F8BDC191FA9825A00449C08 /* TLSet.swift */,
+				3F8BDC1B1FAA48F400449C08 /* TLEntity.swift */,
+			);
+			path = "Targeted Learning";
+			sourceTree = "<group>";
+		};
+		3FCBA7901FAD80E400851A0D /* Competitive Learning */ = {
+			isa = PBXGroup;
+			children = (
+				3FCBA7911FAD834500851A0D /* CLGameTemplate.swift */,
+				3FCBA7951FAD858600851A0D /* CLFoundation.swift */,
+				3FCBA7931FAD83B400851A0D /* CLEntity.swift */,
+				3FCBA7991FAD87AB00851A0D /* CLSet.swift */,
+			);
+			path = "Competitive Learning";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -177,6 +275,7 @@
 				TargetAttributes = {
 					3F7F9D9F1F9429940064994A = {
 						CreatedOnToolsVersion = 9.0;
+						LastSwiftMigration = 0900;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -205,22 +304,44 @@
 			files = (
 				3F64ED5C1F97F72D0070DD04 /* Shell.swift in Sources */,
 				3F9167CE1F97E26500896572 /* HiddenNeuron.swift in Sources */,
+				3F8BDC1C1FAA48F400449C08 /* TLEntity.swift in Sources */,
 				3F9167C41F97B9AC00896572 /* InnovationGenerator.swift in Sources */,
 				3F9167CA1F97E25500896572 /* InputNeuron.swift in Sources */,
 				3F60F0FF1F96C3A900FCCD8D /* SQLiteTable.swift in Sources */,
+				3F31ED201FA2A09D00BA9622 /* RandomNetwork.swift in Sources */,
 				3F9167CC1F97E25E00896572 /* OutputNeuron.swift in Sources */,
 				3F9167D41F97EAA800896572 /* SigmoidNeuron.swift in Sources */,
+				3F31ED221FA2A53700BA9622 /* Random.swift in Sources */,
+				3F5600901F9ACD2E007E708A /* GeneralError.swift in Sources */,
+				3F8BDC1E1FAAE38000449C08 /* LearningThread.swift in Sources */,
+				3FCBA79E1FAD8BFA00851A0D /* LearningEntity.swift in Sources */,
 				3F60F0FD1F96C2F900FCCD8D /* SQLiteDatabase.swift in Sources */,
+				3F06E8CC1F9E56D6007A1D17 /* SQLiteRow.swift in Sources */,
 				3F9167D01F97E73C00896572 /* TernayThresholdNeuron.swift in Sources */,
+				3FCBA79C1FAD8B5400851A0D /* LearningSet.swift in Sources */,
 				3F7F9DA41F9429940064994A /* main.swift in Sources */,
 				3F60F1011F96C48800FCCD8D /* SQLiteStatement.swift in Sources */,
 				3F9167D81F97EEA200896572 /* NeuralError.swift in Sources */,
 				3F9167C01F97B63D00896572 /* Neuron.swift in Sources */,
 				3F9167C61F97BBAF00896572 /* NeuralConnectionDataSet.swift in Sources */,
-				3F66D5A01F9700660034C810 /* SQLiteRowSet.swift in Sources */,
+				3F13689B1FAE62E600637559 /* LearningCore.swift in Sources */,
+				3F8BDC181FA9560000449C08 /* NeuralIOSet.swift in Sources */,
+				3F06E8CE1F9E5923007A1D17 /* SQLiteRowSet.swift in Sources */,
+				3F66D5A01F9700660034C810 /* SQLiteRowSet_DEP.swift in Sources */,
+				3FCBA7961FAD858600851A0D /* CLFoundation.swift in Sources */,
+				3F1368991FAE5AC700637559 /* Helper.swift in Sources */,
+				3F8BDC1A1FA9825A00449C08 /* TLSet.swift in Sources */,
+				3F8BDC251FACC87000449C08 /* Display.swift in Sources */,
+				3FCBA7921FAD834500851A0D /* CLGameTemplate.swift in Sources */,
 				3F9167C21F97B6CB00896572 /* Connection.swift in Sources */,
+				3FCBA7A01FAD8CCE00851A0D /* GrandMasterConfig.swift in Sources */,
+				3F8BDC231FACC78A00449C08 /* ProgressDataSet.swift in Sources */,
+				3F56008E1F9AC8DA007E708A /* OutputSet.swift in Sources */,
 				3F9167D21F97E8B400896572 /* BinaryThresholdNeuron.swift in Sources */,
+				3FCBA7941FAD83B400851A0D /* CLEntity.swift in Sources */,
 				3F9167D61F97EB7800896572 /* NeuralNetwork.swift in Sources */,
+				3FCBA79A1FAD87AB00851A0D /* CLSet.swift in Sources */,
+				3F8BDC271FACEB2A00449C08 /* Flag.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -336,8 +457,11 @@
 		3F7F9DA81F9429940064994A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
@@ -345,7 +469,9 @@
 		3F7F9DA91F9429940064994A /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 			};

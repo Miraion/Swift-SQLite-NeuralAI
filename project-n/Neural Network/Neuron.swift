@@ -10,6 +10,8 @@ protocol Neuron {
     
     var id: Int { get }
     
+    init (id: Int)
+    
     func type () -> String
     
     mutating func calculate () -> Double

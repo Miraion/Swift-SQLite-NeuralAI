@@ -10,7 +10,7 @@ class Connection {
     
     let innovationValue: Int
     
-    let weight: Double
+    var weight: Double
     
     var targetNeuron: Neuron
     

@@ -28,9 +28,9 @@ extension SQLiteDatabase {
             
             // Create the statement from input strings.
             if let sText = specText {
-                statement = database.generateStatment("SELECT \(column) FROM \(name) \(sText);")
+                statement = database.generateStatement("SELECT \(column) FROM \(name) \(sText);")
             } else {
-                statement = database.generateStatment("SELECT \(column) FROM \(name);")
+                statement = database.generateStatement("SELECT \(column) FROM \(name);")
             }
             
             if let s = statement {
@@ -44,7 +44,7 @@ extension SQLiteDatabase {
         // Returns whether the insertion was successful.
         @discardableResult
         func insert (_ values: String) -> Bool {
-            if let statement = database.generateStatment("INSERT INTO \(name) VALUES \(values);") {
+            if let statement = database.generateStatement("INSERT INTO \(name) VALUES \(values);") {
                 return statement.step() == SQLITE_DONE
             } else {
                 return false
@@ -55,7 +55,7 @@ extension SQLiteDatabase {
         // Returns whether update was successful.
         @discardableResult
         func update (set setText: String, where whereText: String) -> Bool {
-            if let statement = database.generateStatment("UPDATE \(name) SET \(setText) WHERE \(whereText);") {
+            if let statement = database.generateStatement("UPDATE \(name) SET \(setText) WHERE \(whereText);") {
                 return statement.step() == SQLITE_DONE
             } else {
                 return false
@@ -66,7 +66,7 @@ extension SQLiteDatabase {
         // Returns whether the deletion was successful.
         @discardableResult
         func delete (where whereText: String) -> Bool {
-            if let statement = database.generateStatment("DELETE FROM \(name) WHERE \(whereText);") {
+            if let statement = database.generateStatement("DELETE FROM \(name) WHERE \(whereText);") {
                 return statement.step() == SQLITE_DONE
             } else {
                 return false
@@ -77,7 +77,7 @@ extension SQLiteDatabase {
         // Returns whether deletion was successful.
         @discardableResult
         func erase () -> Bool {
-            if let statement = database.generateStatment("DELETE FROM \(name);") {
+            if let statement = database.generateStatement("DELETE FROM \(name);") {
                 return statement.step() == SQLITE_DONE
             } else {
                 return false

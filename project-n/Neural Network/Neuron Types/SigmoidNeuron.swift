@@ -14,9 +14,11 @@ class HiddenSigmoidNeuron : HiddenNeuron {
     
     var storedValue: Double? = nil
     
+    var bias: Double = 0.0
+    
     var connections = [Connection]()
     
-    init (id: Int) {
+    required init (id: Int) {
         self.id = id
     }
     

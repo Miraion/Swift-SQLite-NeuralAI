@@ -12,11 +12,18 @@ class HiddenTernaryThresholdNeuron : HiddenNeuron {
     
     var storedValue: Double? = nil
     
+    var bias: Double = 0.0
+    
     var threshold: Double
     
     var connections = [Connection]()
     
-    init (id: Int, threshold: Double = 0) {
+    required init (id: Int) {
+        self.id = id
+        self.threshold = 0
+    }
+    
+    init (id: Int, threshold: Double) {
         self.id = id
         self.threshold = threshold
     }

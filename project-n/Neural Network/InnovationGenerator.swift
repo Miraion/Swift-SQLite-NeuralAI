@@ -12,6 +12,10 @@ class InnovationGenerator {
     
     private static var innovDatabase = Dictionary<NeuralConnectionDataSet, Int>()
     
+    static var innovationValues: [Int] {
+        return innovDatabase.values.sorted()
+    }
+    
     // Generates an innovation value for a given connection, creates a new one if needed.
     static func generate (from base: Neuron, to target: Neuron) -> Int {
         return generate(from: base.id, to: target.id)
@@ -28,6 +32,16 @@ class InnovationGenerator {
             innovDatabase[NeuralConnectionDataSet(from: base, to: target)] = newVal
             return newVal
         }
+    }
+    
+    // Returns the connection data for a given innovation number.
+    static func getConnectionData (innov: Int) -> NeuralConnectionDataSet? {
+        for kv in innovDatabase {
+            if kv.value == innov {
+                return kv.key
+            }
+        }
+        return nil
     }
     
     // Saves contents of innovDatabase into a SQLite table with column configuration:

@@ -6,57 +6,89 @@
 //  Copyright © 2017 Jeremy S. All rights reserved.
 //
 
-// Database and table setup
-let neuralConfigDatabasePath = "/Users/Jeremy/Desktop/Swift/project-n/databases/NeuralConfig.db"
-let neuralConfigDatabase = SQLiteDatabase(path: neuralConfigDatabasePath)
-let innovSet = neuralConfigDatabase.table(name: "INNOVSET")
+import Darwin
+import Foundation
 
-// Neural Network setup
-InnovationGenerator.load(from: innovSet)
+var DEBUG_PRINT = false
 
-let network = NeuralNetwork()
-
-// Nodes
-network.addNode(InputNeuron(id: 0))
-network.addNode(InputNeuron(id: 1))
-
-network.addNode(HiddenSigmoidNeuron(id: 2))
-network.addNode(HiddenSigmoidNeuron(id: 3))
-network.addNode(HiddenSigmoidNeuron(id: 4))
-
-network.addNode(OutputSigmoidNeuron(id: 5))
-
-// Connections
-do {
-    try network.addConnection(from: 5, to: 2, weight: 0.6)
-    try network.addConnection(from: 5, to: 3, weight: 0.5)
-    try network.addConnection(from: 5, to: 4, weight: -0.2)
-    
-    try network.addConnection(from: 2, to: 0, weight: 0.2)
-    try network.addConnection(from: 2, to: 1, weight: 0.5)
-    
-    try network.addConnection(from: 3, to: 0, weight: 0.8)
-    try network.addConnection(from: 3, to: 1, weight: -0.3)
-    
-    try network.addConnection(from: 4, to: 0, weight: -0.3)
-    try network.addConnection(from: 4, to: 1, weight: 0.9)
-} catch {
-    print("Error constructing connections")
+func normalize (_ input: [Double]) -> String {
+    var normalizedOutput = "["
+    for i in 0..<input.count {
+        normalizedOutput += String(format: "%.3f", input[i])
+        if i != (input.count - 1) {
+            normalizedOutput += ", "
+        }
+    }
+    normalizedOutput += "]"
+    return normalizedOutput
 }
 
-try! print(network.solve(for: 1, 1))
-
-neuralConfigDatabase.dropTable(name: "TestNN_NODE")
-neuralConfigDatabase.dropTable(name: "TestNN_CONN")
-
-do {
-    try network.saveAs("TestNN", in: neuralConfigDatabase)
-    print("Save As OK!")
-} catch NeuralError.UnableToCreateNewTable {
-    print("Error creating table")
-} catch {
-    print("Error saving network")
+func binaryNormalize (_ input: [Double]) -> [Int] {
+    var norm = [Int]()
+    for val in input {
+        norm.append(val < 0.5 ? 0 : 1)
+    }
+    return norm
 }
 
-// Neural Network Teardown
-InnovationGenerator.save(to: innovSet)
+func train (name: String, _ referenceSet: NeuralIOSet, _ config: (Int, Int, [Int]), goal: Double) {
+    
+    let database = SQLiteDatabase(path: "/Users/Jeremy/Desktop/Swift/project-n/databases/NeuralConfig.db")
+    
+    let nodeTable = database.table(name: name + "_node")
+    let connTable = database.table(name: name + "_conn")
+    
+    let learningCore = LearningCore<TLSet>(config: config, target: referenceSet, saveTables: (nodeTable, connTable))
+    learningCore.train(till: goal)
+}
+
+func runTest (name: String, inputs: [[Double]]) {
+    let netLoad = NeuralNetwork()
+    let database = SQLiteDatabase(path: "/Users/Jeremy/Desktop/Swift/project-n/databases/NeuralConfig.db")
+    let nodeTable = database.table(name: name + "_node")
+    let connTable = database.table(name: name + "_conn")
+    
+    do {
+        try netLoad.load(nodeTable: nodeTable, connTable: connTable)
+        for input in inputs {
+            let solution = try netLoad.solve(for: input)
+            
+            print("in: \(solution.in) -> out: \(normalize(solution.out))")
+        }
+    } catch {
+        print("Something went wrong")
+    }
+}
+
+
+// ========================================================== //
+
+let combinationTrainingSet = NeuralIOSet(reference: [
+    (in: [0,0,0,0], out: [0,0]),
+    (in: [1,0,0,0], out: [0.5,0]),
+    (in: [0,1,0,0], out: [0.5,0]),
+    (in: [1,1,0,0], out: [1,0]),
+    (in: [0,0,0,1], out: [0,0.5]),
+    (in: [0,0,1,0], out: [0,0.5]),
+    (in: [0,0,1,1], out: [0,1])
+])
+
+let combinationNetworkConfig = (in: 4, out: 2, hidden: [3])
+
+
+//train(name: "neg_string", combinationTrainingSet, combinationNetworkConfig, goal: 0.15)
+//runTest(name: "neg_string", inputs: combinationTrainingSet.inputs)
+
+
+let xorTrainingSet = NeuralIOSet(reference: [
+    (in: [0,0], out: [0]),
+    (in: [0,1], out: [1]),
+    (in: [1,0], out: [1]),
+    (in: [1,1], out: [0])
+])
+
+let xorNetworkConfig = (in: 2, out: 1, hidden: [3])
+
+train(name: "xor", xorTrainingSet, xorNetworkConfig, goal: 0.05)
+runTest(name: "xor", inputs: xorTrainingSet.inputs)
+

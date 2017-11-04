@@ -12,7 +12,7 @@ class InputNeuron : Neuron {
     
     let id: Int
     
-    init (id: Int) {
+    required init (id: Int) {
         self.id = id
     }
     

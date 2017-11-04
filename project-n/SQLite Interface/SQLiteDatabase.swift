@@ -35,7 +35,7 @@ class SQLiteDatabase {
  
     // Creates and prepares a statement.
     // Returns nil if unable to prepare the statement.
-    func generateStatment (_ command: String) -> SQLiteStatement? {
+    func generateStatement(_ command: String) -> SQLiteStatement? {
         let statement = SQLiteStatement()
         if statement.prepare(database: self, command: command) {
             return statement
@@ -45,7 +45,7 @@ class SQLiteDatabase {
     }
     
     // Returns a table object with a given name.
-    // Stores a dictionary of queried tables so a new table
+    // Stores it in a dictionary of queried tables so a new table
     // does not need to be created if it has been queried before.
     func table (name: String) -> SQLiteTable {
         if let t = tables[name] {
@@ -60,7 +60,7 @@ class SQLiteDatabase {
     // and column representation.
     @discardableResult
     func createTable (name: String, _ command: String) -> Bool {
-        if let statement = generateStatment("CREATE TABLE \(name)\(command);") {
+        if let statement = generateStatement("CREATE TABLE \(name)\(command);") {
             return statement.step() == SQLITE_DONE
         } else {
             return false
@@ -70,7 +70,7 @@ class SQLiteDatabase {
     // Drops a table with a given name.
     @discardableResult
     func dropTable (name: String) -> Bool {
-        if let statement = generateStatment("DROP TABLE \(name);") {
+        if let statement = generateStatement("DROP TABLE \(name);") {
             return statement.step() == SQLITE_DONE
         } else {
             return false

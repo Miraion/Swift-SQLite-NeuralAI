@@ -20,4 +20,7 @@ enum NeuralError : Error {
     // Network evaluation errors
     case NumberOfInputsDoesNotMatchNumberOfInputNodes
     
+    // Machine Learning errors
+    case InvalidComparison
+    
 }
