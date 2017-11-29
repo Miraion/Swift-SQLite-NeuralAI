@@ -22,13 +22,13 @@ class LearningThread<LSet: LearningSet> {
     // Use Grand Central Dispatch to start a training session.
     // Will train for a given number of rounds or until a goal
     // is reached.
-    func start (goal: Double) {
+    func start (goal: Double, comparison: @escaping (Double, Double) -> Bool) {
         // Reset flags
         isFinished = false
         
         // Queue command via Grand Central Dispatch
         DispatchQueue.global(qos: .default).async {
-            if self.learningSet.train(till: goal, or: self.rounds) {
+            if self.learningSet.train(till: goal, or: self.rounds, by: comparison) {
                 Flag.global.shouldContinueThreadExecution = false
             }
             self.isFinished = true

@@ -57,7 +57,7 @@ protocol LearningSet {
 extension LearningSet {
     
     // Populates the learning set with random networks.
-    init (size: Int, config: NeuralNetworkConfig) {
+    init (_ size: Int, _ config: NeuralNetworkConfig) {
         self.init()
         
         for _ in 0..<size {
@@ -67,7 +67,7 @@ extension LearningSet {
     
     
     // Populates the learing set with slight modifications of a seed network.
-    init (size: Int, seed: NeuralNetwork) {
+    init (_ size: Int, _ seed: NeuralNetwork) {
         self.init()
         
         entities.append(Entity(network: NeuralNetwork(copy: seed)))
@@ -93,7 +93,14 @@ extension LearningSet {
     // The worst 10 networks are replaced with slight modifications on the best
     // network while the other worst ones are randomized.
     mutating func mutate () {
-        for i in 1..<entities.count {
+        let startIndex: Int
+        if GrandMasterConfig.global.modifyBest {
+            startIndex = 0
+        } else {
+            startIndex = 1
+        }
+        
+        for i in startIndex..<entities.count {
             if i > (entities.count - GrandMasterConfig.global.cloneAmount) {
                 entities[i].network = NeuralNetwork(copy: entities[0].network)
                 entities[i].network.tweakWeight(chance: 20, range: 0.1)
@@ -171,9 +178,9 @@ extension LearningSet {
     // Returns true if training ended because goal was reached,
     // otherwise false.
     @discardableResult
-    mutating func train (till goal: Double, or rounds: Int) -> Bool {
+    mutating func train (till goal: Double, or rounds: Int, by comparison: (Double, Double) -> Bool) -> Bool {
         for _ in 1...rounds {
-            if step() < goal {
+            if comparison(step(), goal) {
                 return true
             }
             

@@ -8,6 +8,10 @@
 
 protocol CLGameTemplate {
     
-    func compete (_ entity1: CLEntity, _ entity2: CLEntity) -> CLDualOutcome
+    associatedtype Player where Player : CLEntity
+    
+    init ()
+    
+    func compete (_ entity1: Player, _ entity2: Player) -> CLDualOutcome
     
 }

@@ -11,6 +11,17 @@
 		3F06E8CE1F9E5923007A1D17 /* SQLiteRowSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F06E8CD1F9E5923007A1D17 /* SQLiteRowSet.swift */; };
 		3F1368991FAE5AC700637559 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F1368981FAE5AC700637559 /* Helper.swift */; };
 		3F13689B1FAE62E600637559 /* LearningCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F13689A1FAE62E600637559 /* LearningCore.swift */; };
+		3F13689E1FAE9F5B00637559 /* GameDisplay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F13689D1FAE9F5B00637559 /* GameDisplay.swift */; };
+		3F1368A01FAE9F6B00637559 /* GameController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F13689F1FAE9F6B00637559 /* GameController.swift */; };
+		3F1368A21FAE9F7500637559 /* GamePlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F1368A11FAE9F7500637559 /* GamePlayer.swift */; };
+		3F1368A41FAE9FE100637559 /* GameBoard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F1368A31FAE9FE100637559 /* GameBoard.swift */; };
+		3F1368A61FAE9FFE00637559 /* GamePiece.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F1368A51FAE9FFE00637559 /* GamePiece.swift */; };
+		3F1368A81FAEA0F300637559 /* GamePoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F1368A71FAEA0F300637559 /* GamePoint.swift */; };
+		3F1368AA1FAEE7D100637559 /* GameHumanPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F1368A91FAEE7D100637559 /* GameHumanPlayer.swift */; };
+		3F1368AC1FAEF41300637559 /* GameAIPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F1368AB1FAEF41300637559 /* GameAIPlayer.swift */; };
+		3F1368AE1FAFC10F00637559 /* GameTrainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F1368AD1FAFC10F00637559 /* GameTrainer.swift */; };
+		3F1368B01FAFD53500637559 /* TestFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F1368AF1FAFD53500637559 /* TestFunctions.swift */; };
+		3F1368B21FB0D20600637559 /* CLCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F1368B11FB0D20600637559 /* CLCore.swift */; };
 		3F31ED201FA2A09D00BA9622 /* RandomNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F31ED1F1FA2A09D00BA9622 /* RandomNetwork.swift */; };
 		3F31ED221FA2A53700BA9622 /* Random.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F31ED211FA2A53700BA9622 /* Random.swift */; };
 		3F56008E1F9AC8DA007E708A /* OutputSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F56008D1F9AC8DA007E708A /* OutputSet.swift */; };
@@ -66,6 +77,17 @@
 		3F06E8CD1F9E5923007A1D17 /* SQLiteRowSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SQLiteRowSet.swift; sourceTree = "<group>"; };
 		3F1368981FAE5AC700637559 /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
 		3F13689A1FAE62E600637559 /* LearningCore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearningCore.swift; sourceTree = "<group>"; };
+		3F13689D1FAE9F5B00637559 /* GameDisplay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameDisplay.swift; sourceTree = "<group>"; };
+		3F13689F1FAE9F6B00637559 /* GameController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameController.swift; sourceTree = "<group>"; };
+		3F1368A11FAE9F7500637559 /* GamePlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamePlayer.swift; sourceTree = "<group>"; };
+		3F1368A31FAE9FE100637559 /* GameBoard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameBoard.swift; sourceTree = "<group>"; };
+		3F1368A51FAE9FFE00637559 /* GamePiece.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamePiece.swift; sourceTree = "<group>"; };
+		3F1368A71FAEA0F300637559 /* GamePoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamePoint.swift; sourceTree = "<group>"; };
+		3F1368A91FAEE7D100637559 /* GameHumanPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameHumanPlayer.swift; sourceTree = "<group>"; };
+		3F1368AB1FAEF41300637559 /* GameAIPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameAIPlayer.swift; sourceTree = "<group>"; };
+		3F1368AD1FAFC10F00637559 /* GameTrainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameTrainer.swift; sourceTree = "<group>"; };
+		3F1368AF1FAFD53500637559 /* TestFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestFunctions.swift; sourceTree = "<group>"; };
+		3F1368B11FB0D20600637559 /* CLCore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CLCore.swift; sourceTree = "<group>"; };
 		3F31ED1F1FA2A09D00BA9622 /* RandomNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomNetwork.swift; sourceTree = "<group>"; };
 		3F31ED211FA2A53700BA9622 /* Random.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Random.swift; sourceTree = "<group>"; };
 		3F56008D1F9AC8DA007E708A /* OutputSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutputSet.swift; sourceTree = "<group>"; };
@@ -116,6 +138,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3F13689C1FAE9F1400637559 /* Game */ = {
+			isa = PBXGroup;
+			children = (
+				3F13689D1FAE9F5B00637559 /* GameDisplay.swift */,
+				3F13689F1FAE9F6B00637559 /* GameController.swift */,
+				3F1368A11FAE9F7500637559 /* GamePlayer.swift */,
+				3F1368A31FAE9FE100637559 /* GameBoard.swift */,
+				3F1368A51FAE9FFE00637559 /* GamePiece.swift */,
+				3F1368A71FAEA0F300637559 /* GamePoint.swift */,
+				3F1368A91FAEE7D100637559 /* GameHumanPlayer.swift */,
+				3F1368AB1FAEF41300637559 /* GameAIPlayer.swift */,
+				3F1368AD1FAFC10F00637559 /* GameTrainer.swift */,
+			);
+			path = Game;
+			sourceTree = "<group>";
+		};
 		3F56008A1F9AC810007E708A /* Machine Learning */ = {
 			isa = PBXGroup;
 			children = (
@@ -125,10 +163,10 @@
 				3FCBA79D1FAD8BFA00851A0D /* LearningEntity.swift */,
 				3FCBA79B1FAD8B5400851A0D /* LearningSet.swift */,
 				3F8BDC1D1FAAE38000449C08 /* LearningThread.swift */,
+				3F13689A1FAE62E600637559 /* LearningCore.swift */,
 				3F8BDC211FACC71F00449C08 /* Display */,
 				3FCBA78F1FAD80C200851A0D /* Targeted Learning */,
 				3FCBA7901FAD80E400851A0D /* Competitive Learning */,
-				3F13689A1FAE62E600637559 /* LearningCore.swift */,
 			);
 			path = "Machine Learning";
 			sourceTree = "<group>";
@@ -172,9 +210,11 @@
 				3F31ED211FA2A53700BA9622 /* Random.swift */,
 				3F8BDC261FACEB2A00449C08 /* Flag.swift */,
 				3F1368981FAE5AC700637559 /* Helper.swift */,
+				3F1368AF1FAFD53500637559 /* TestFunctions.swift */,
 				3F9167BE1F97B61D00896572 /* Neural Network */,
 				3F56008A1F9AC810007E708A /* Machine Learning */,
 				3F60F0FB1F96C2D300FCCD8D /* SQLite Interface */,
+				3F13689C1FAE9F1400637559 /* Game */,
 			);
 			path = "project-n";
 			sourceTree = "<group>";
@@ -239,6 +279,7 @@
 				3FCBA7951FAD858600851A0D /* CLFoundation.swift */,
 				3FCBA7931FAD83B400851A0D /* CLEntity.swift */,
 				3FCBA7991FAD87AB00851A0D /* CLSet.swift */,
+				3F1368B11FB0D20600637559 /* CLCore.swift */,
 			);
 			path = "Competitive Learning";
 			sourceTree = "<group>";
@@ -302,11 +343,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3F1368AA1FAEE7D100637559 /* GameHumanPlayer.swift in Sources */,
 				3F64ED5C1F97F72D0070DD04 /* Shell.swift in Sources */,
 				3F9167CE1F97E26500896572 /* HiddenNeuron.swift in Sources */,
+				3F13689E1FAE9F5B00637559 /* GameDisplay.swift in Sources */,
 				3F8BDC1C1FAA48F400449C08 /* TLEntity.swift in Sources */,
 				3F9167C41F97B9AC00896572 /* InnovationGenerator.swift in Sources */,
 				3F9167CA1F97E25500896572 /* InputNeuron.swift in Sources */,
+				3F1368AE1FAFC10F00637559 /* GameTrainer.swift in Sources */,
 				3F60F0FF1F96C3A900FCCD8D /* SQLiteTable.swift in Sources */,
 				3F31ED201FA2A09D00BA9622 /* RandomNetwork.swift in Sources */,
 				3F9167CC1F97E25E00896572 /* OutputNeuron.swift in Sources */,
@@ -314,6 +358,7 @@
 				3F31ED221FA2A53700BA9622 /* Random.swift in Sources */,
 				3F5600901F9ACD2E007E708A /* GeneralError.swift in Sources */,
 				3F8BDC1E1FAAE38000449C08 /* LearningThread.swift in Sources */,
+				3F1368A01FAE9F6B00637559 /* GameController.swift in Sources */,
 				3FCBA79E1FAD8BFA00851A0D /* LearningEntity.swift in Sources */,
 				3F60F0FD1F96C2F900FCCD8D /* SQLiteDatabase.swift in Sources */,
 				3F06E8CC1F9E56D6007A1D17 /* SQLiteRow.swift in Sources */,
@@ -328,18 +373,25 @@
 				3F8BDC181FA9560000449C08 /* NeuralIOSet.swift in Sources */,
 				3F06E8CE1F9E5923007A1D17 /* SQLiteRowSet.swift in Sources */,
 				3F66D5A01F9700660034C810 /* SQLiteRowSet_DEP.swift in Sources */,
+				3F1368A21FAE9F7500637559 /* GamePlayer.swift in Sources */,
+				3F1368AC1FAEF41300637559 /* GameAIPlayer.swift in Sources */,
 				3FCBA7961FAD858600851A0D /* CLFoundation.swift in Sources */,
+				3F1368B01FAFD53500637559 /* TestFunctions.swift in Sources */,
 				3F1368991FAE5AC700637559 /* Helper.swift in Sources */,
 				3F8BDC1A1FA9825A00449C08 /* TLSet.swift in Sources */,
+				3F1368A41FAE9FE100637559 /* GameBoard.swift in Sources */,
 				3F8BDC251FACC87000449C08 /* Display.swift in Sources */,
 				3FCBA7921FAD834500851A0D /* CLGameTemplate.swift in Sources */,
 				3F9167C21F97B6CB00896572 /* Connection.swift in Sources */,
+				3F1368A81FAEA0F300637559 /* GamePoint.swift in Sources */,
 				3FCBA7A01FAD8CCE00851A0D /* GrandMasterConfig.swift in Sources */,
 				3F8BDC231FACC78A00449C08 /* ProgressDataSet.swift in Sources */,
 				3F56008E1F9AC8DA007E708A /* OutputSet.swift in Sources */,
 				3F9167D21F97E8B400896572 /* BinaryThresholdNeuron.swift in Sources */,
+				3F1368B21FB0D20600637559 /* CLCore.swift in Sources */,
 				3FCBA7941FAD83B400851A0D /* CLEntity.swift in Sources */,
 				3F9167D61F97EB7800896572 /* NeuralNetwork.swift in Sources */,
+				3F1368A61FAE9FFE00637559 /* GamePiece.swift in Sources */,
 				3FCBA79A1FAD87AB00851A0D /* CLSet.swift in Sources */,
 				3F8BDC271FACEB2A00449C08 /* Flag.swift in Sources */,
 			);

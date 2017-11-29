@@ -33,6 +33,12 @@ class CLEntity : LearningEntity {
         self.network = network
     }
     
+    func reset () {
+        wins = 0
+        losses = 0
+        ties = 0
+    }
+    
     // CLEntities, unlike TLEntities, are ordered by win rate.
     // A higher win rate denotes a better entity hence the
     // value > value instead of value < value.

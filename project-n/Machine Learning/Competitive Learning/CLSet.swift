@@ -6,40 +6,45 @@
 //  Copyright © 2017 Jeremy S. All rights reserved.
 //
 
-class CLSet : LearningSet {
+class CLSet<Game: CLGameTemplate> : LearningSet {
     
-    typealias Entity = CLEntity
+    typealias Entity = Game.Player
     
     var stepId: Int = -1
-    var entities = [CLEntity]()
+    var entities = [Game.Player]()
     var callingThreadId: Int? = nil
     var lastStats = (best: 0.0, average: 0.0)
     
-    var game: CLGameTemplate? = nil
+    var referenceEntity: Entity?
+    var game: Game? = nil
     
     required init () {}
     
-    convenience init (size: Int, config: NeuralNetworkConfig, game: CLGameTemplate) {
-        self.init(size: size, config: config)
-        self.game = game
+    convenience init (size: Int, config: NeuralNetworkConfig, reference: Entity) {
+        self.init(size, config)
+        self.game = Game()
+        self.referenceEntity = Entity(network: NeuralNetwork(copy: reference.network))
     }
     
-    convenience init (size: Int, seed: NeuralNetwork, game: CLGameTemplate) {
-        self.init(size: size, seed: seed)
-        self.game = game
+    convenience init (size: Int, seed: NeuralNetwork, reference: Entity) {
+        self.init(size, seed)
+        self.game = Game()
+        self.referenceEntity = Entity(network: NeuralNetwork(copy: reference.network))
     }
     
-    // Each entity will play against a set number of random opponents.
+    // Each entity plays two games against the reference entity.
     func evaluate (_ index: Int) {
-        for i in 0..<entities.count {
-            for j in 1...GrandMasterConfig.global.gamesPerEvaluation {
-                let e1 = entities[i]
-                let e2 = entities.circularStride(start: i, distance: j)
-                let result = game!.compete(e1, e2)
-                
-                result.e1.apply(to: e1)
-                result.e2.apply(to: e2)
-            }
+        for i in 1..<entities.count {
+            // Play with entity being x first
+            var result = game!.compete(entities[i], entities[0])
+            result.e1.apply(to: entities[i])
+            result.e2.apply(to: entities[0])
+            
+            // Then play with entity being o
+            result = game!.compete(entities[0], entities[i])
+            result.e2.apply(to: entities[i])
+            result.e1.apply(to: entities[0])
+            
         }
     }
     

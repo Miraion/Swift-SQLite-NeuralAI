@@ -11,84 +11,149 @@ import Foundation
 
 var DEBUG_PRINT = false
 
-func normalize (_ input: [Double]) -> String {
-    var normalizedOutput = "["
-    for i in 0..<input.count {
-        normalizedOutput += String(format: "%.3f", input[i])
-        if i != (input.count - 1) {
-            normalizedOutput += ", "
-        }
-    }
-    normalizedOutput += "]"
-    return normalizedOutput
-}
+//let p1 = GameHumanPlayer()
+//let p2 = GameHumanPlayer()
+//
+//let controller = GameController(display: true)
+//print(controller.play(p1, p2))
 
-func binaryNormalize (_ input: [Double]) -> [Int] {
-    var norm = [Int]()
-    for val in input {
-        norm.append(val < 0.5 ? 0 : 1)
-    }
-    return norm
-}
+let database = SQLiteDatabase(path: "/Users/Jeremy/Desktop/Swift/project-n/databases/NeuralConfig.db")
+let nodeTable = database.table(name: "ttt_node")
+let connTable = database.table(name: "ttt_conn")
 
-func train (name: String, _ referenceSet: NeuralIOSet, _ config: (Int, Int, [Int]), goal: Double) {
-    
-    let database = SQLiteDatabase(path: "/Users/Jeremy/Desktop/Swift/project-n/databases/NeuralConfig.db")
-    
-    let nodeTable = database.table(name: name + "_node")
-    let connTable = database.table(name: name + "_conn")
-    
-    let learningCore = LearningCore<TLSet>(config: config, target: referenceSet, saveTables: (nodeTable, connTable))
-    learningCore.train(till: goal)
-}
+//let learningCore = LearningCore<CLSet<GameTrainer>>(config: (in: 9, out: 9, hidden: [15,13]), saveTables: (nodeTable, connTable))
+let network = NeuralNetwork()
+try! network.load(nodeTable: nodeTable, connTable: connTable)
+let learningCore = CLCore(seed: network, saveTables: (nodeTable, connTable))
+//let learningCore = CLCore(config: (9,9,[15]), saveTables: (nodeTable, connTable))
+//learningCore.train()
 
-func runTest (name: String, inputs: [[Double]]) {
-    let netLoad = NeuralNetwork()
-    let database = SQLiteDatabase(path: "/Users/Jeremy/Desktop/Swift/project-n/databases/NeuralConfig.db")
-    let nodeTable = database.table(name: name + "_node")
-    let connTable = database.table(name: name + "_conn")
-    
-    do {
-        try netLoad.load(nodeTable: nodeTable, connTable: connTable)
-        for input in inputs {
-            let solution = try netLoad.solve(for: input)
-            
-            print("in: \(solution.in) -> out: \(normalize(solution.out))")
-        }
-    } catch {
-        print("Something went wrong")
-    }
-}
+//train(name: "xor", xorTrainingSet, xorNetworkConfig, goal: 0.1)
+
+//let config = (in: 9, out: 9, hidden: [15])
+
+//let net2 = NeuralNetwork(copy: network)
+//net2.randomizeWeight(chance: 50)
+//net2.randomizeBias(chance: 50)
+
+let p1 = GameAIPlayer(network: network)
+//let p2 = GameAIPlayer(network: net2)
+let p2 = GameHumanPlayer()
+
+let game = GameController(display: true)
+print(game.play(p1, p2))
+print(game.board)
+print(game.play(p2, p1))
 
 
-// ========================================================== //
-
-let combinationTrainingSet = NeuralIOSet(reference: [
-    (in: [0,0,0,0], out: [0,0]),
-    (in: [1,0,0,0], out: [0.5,0]),
-    (in: [0,1,0,0], out: [0.5,0]),
-    (in: [1,1,0,0], out: [1,0]),
-    (in: [0,0,0,1], out: [0,0.5]),
-    (in: [0,0,1,0], out: [0,0.5]),
-    (in: [0,0,1,1], out: [0,1])
+let moveSet = NeuralIOSet(reference: [
+    (in: [0,0,0,
+          0,0,0,
+          0,0,0],
+     out: [0,0,0,
+           0,1,0,
+           0,0,0]),
+    (in: [-1,-1,0,
+           0, 0,0,
+           0, 0,0],
+     out: [0,0,1,
+           0,0,0,
+           0,0,0]),
+    (in: [-1,0,0,
+          -1,0,0,
+           0,0,0],
+     out: [0,0,0,
+           0,0,0,
+           1,0,0]),
+    (in: [-1, 0,0,
+           0,-1,0,
+           0, 0,0],
+     out: [0,0,0,
+           0,0,0,
+           0,0,1]),
+    (in: [0,-1,0,
+          0,-1,0,
+          0, 0,0],
+     out: [0,0,0,
+           0,0,0,
+           0,1,0]),
+    (in: [0, 0, 0,
+          0,-1,-1,
+          0, 0, 0],
+     out: [0,0,0,
+           1,0,0,
+           0,0,0]),
+    (in: [0, 0, 0,
+          0,-1, 0,
+          0, 0,-1],
+     out: [1,0,0,
+           0,0,0,
+           0,0,0]),
+    (in: [0, 0,0,
+          0,-1,0,
+          0,-1,0],
+     out: [0,1,0,
+           0,0,0,
+           0,0,0]),
+    (in: [ 0, 0,0,
+           0,-1,0,
+          -1, 0,0],
+     out: [0,0,1,
+           0,0,0,
+           0,0,0]),
+    (in: [ 0, 0,0,
+          -1,-1,0,
+           0, 0,0],
+     out: [0,0,0,
+           0,0,1,
+           0,0,0]),
+    (in: [-1, 0,0,
+           0,-1,0,
+           0, 0,0],
+     out: [0,0,0,
+           0,0,0,
+           0,0,1]),
+    (in: [0,0, 0,
+          0,0,-1,
+          0,0,-1],
+     out: [0,0,1,
+           0,0,0,
+           0,0,0]),
+    (in: [0, 0, 0,
+          0, 0, 0,
+          0,-1,-1],
+     out: [0,0,0,
+           0,0,0,
+           1,0,0]),
+    (in: [0,0,-1,
+          0,0,-1,
+          0,0, 0],
+     out: [0,0,0,
+           0,0,0,
+           0,0,1]),
+    (in: [0,-1,-1,
+          0, 0, 0,
+          0, 0, 0],
+     out: [1,0,0,
+           0,0,0,
+           0,0,0]),
+    (in: [ 0, 0,0,
+           0, 0,0,
+          -1,-1,0],
+     out: [0,0,0,
+           0,0,0,
+           0,0,1]),
+    (in: [ 0,0,0,
+          -1,0,0,
+          -1,0,0],
+     out: [1,0,0,
+           0,0,0,
+           0,0,0])
 ])
 
-let combinationNetworkConfig = (in: 4, out: 2, hidden: [3])
-
-
-//train(name: "neg_string", combinationTrainingSet, combinationNetworkConfig, goal: 0.15)
-//runTest(name: "neg_string", inputs: combinationTrainingSet.inputs)
-
-
-let xorTrainingSet = NeuralIOSet(reference: [
-    (in: [0,0], out: [0]),
-    (in: [0,1], out: [1]),
-    (in: [1,0], out: [1]),
-    (in: [1,1], out: [0])
-])
-
-let xorNetworkConfig = (in: 2, out: 1, hidden: [3])
-
-train(name: "xor", xorTrainingSet, xorNetworkConfig, goal: 0.05)
-runTest(name: "xor", inputs: xorTrainingSet.inputs)
-
+//train(name: "ttt", moveSet, config, goal: 0.5)
+//let network = NeuralNetwork()
+//try! network.load(nodeTable: nodeTable, connTable: connTable)
+//let learningCore = LearningCore<TLSet>(seed: network, target: moveSet, saveTables: (nodeTable, connTable))
+//learningCore.train(till: 0.8)
+//

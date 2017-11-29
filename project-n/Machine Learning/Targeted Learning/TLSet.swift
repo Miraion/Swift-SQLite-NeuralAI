@@ -20,12 +20,12 @@ class TLSet : LearningSet {
     required init () {}
     
     convenience init (size: Int, config: NeuralNetworkConfig, target: NeuralIOSet) {
-        self.init(size: size, config: config)
+        self.init(size, config)
         self.target = target
     }
     
     convenience init (size: Int, seed: NeuralNetwork, target: NeuralIOSet) {
-        self.init(size: size, seed: seed)
+        self.init(size, seed)
         self.target = target
     }
     

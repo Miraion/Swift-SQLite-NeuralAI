@@ -50,6 +50,14 @@ class LearningCore<LSet: LearningSet> {
         return false
     }
     
+    func threadStatsComparison (_ lhs: (Int, Double), _ rhs: (Int, Double)) -> Bool {
+        return lhs.1 < rhs.1
+    }
+    
+    func threadComparison (lhs: Double, rhs: Double) -> Bool {
+        return lhs < rhs
+    }
+    
     @discardableResult
     func train (till goal: Double? = nil) -> NeuralNetwork {
         
@@ -65,7 +73,7 @@ class LearningCore<LSet: LearningSet> {
             
             for thread in threads {
                 if let g = goal {
-                    thread.start(goal: g)
+                    thread.start(goal: g, comparison: threadComparison)
                 } else {
                     thread.start()
                 }
@@ -100,7 +108,7 @@ class LearningCore<LSet: LearningSet> {
                 threadStats.append((id: i, value: threads[i].learningSet.entities[0].value))
             }
             
-            threadStats.sort(by: { $0.value < $1.value })
+            threadStats.sort(by: threadStatsComparison)
             let bestThreadId = threadStats.first!.id
             let worstThreadId = threadStats.last!.id
             
@@ -114,8 +122,12 @@ class LearningCore<LSet: LearningSet> {
             // Overrite the best entity with the clone
             threads[worstThreadId].learningSet.entities[0] = LSet.Entity(network: bestClone)
             
+            // Call any other implimentation that subclasses have.
+            onConvergence(bestNetwork!)
+            
             // Save the best network if the interval is up
             if convergenceCount % GrandMasterConfig.global.saveInterval == 0 {
+                print("Saving...")
                 bestNetwork!.network.save(nodeTable: saveTables.node, connTable: saveTables.conn)
             }
             
@@ -145,6 +157,8 @@ class LearningCore<LSet: LearningSet> {
         return bestNetwork!.network
     }
     
+    func onConvergence (_ bestEntity: LSet.Entity) {}
+    
 }
 
 
@@ -162,24 +176,15 @@ extension LearningCore where LSet == TLSet {
         }
     }
     
-}
-
-
-extension LearningCore where LSet == CLSet {
-    
-    convenience init (config: NeuralNetworkConfig, game: CLGameTemplate, saveTables: NeuralSaveTables) {
+    convenience init (seed: NeuralNetwork, target: NeuralIOSet, saveTables: NeuralSaveTables) {
         self.init(saveTables: saveTables)
-        
         for i in 0..<GrandMasterConfig.global.numThreads {
-            learningSets.append(CLSet(size: GrandMasterConfig.global.entitiesPerSet, config: config, game: game))
+            learningSets.append(TLSet(size: GrandMasterConfig.global.entitiesPerSet, seed: seed, target: target))
             learningSets[i].callingThreadId = i
         }
         for set in learningSets {
-            threads.append(LearningThread<CLSet>(set, rounds: GrandMasterConfig.global.threadConvergenceInterval))
+            threads.append(LearningThread<TLSet>(set, rounds: GrandMasterConfig.global.threadConvergenceInterval))
         }
     }
     
 }
-
-
-

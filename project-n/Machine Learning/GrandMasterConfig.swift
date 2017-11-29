@@ -10,21 +10,22 @@ class GrandMasterConfig {
     
     static var global = GrandMasterConfig()
     
-    var smallChangeAmount = 80
-    var cloneAmount = 10
+    var smallChangeAmount = 6
+    var cloneAmount = 1
+    var modifyBest = false
     
-    var entitiesPerSet = 100
+    var entitiesPerSet = 10
     
     // CLEntity Settings
     var tiesCountAsWins = true
     
     // CLSet Settings
-    var gamesPerEvaluation = 10
+    var gamesPerEvaluation = 5
     
     // LearningCore Settings
     var pauseOnConvergence = true
     var numThreads = 4
-    var threadConvergenceInterval = 200
-    var saveInterval = 5
+    var threadConvergenceInterval = 20
+    var saveInterval = 1
     
 }
